@@ -1,0 +1,9 @@
+html{
+    background-color: black;
+}
+
+.navbar-primaria{
+    display: flex;
+    height: 100px;
+}
+
