@@ -232,3 +232,74 @@
 .carousel-indicators {
   margin-bottom: 2.5rem; /* ou ajuste como preferir, ex: 3rem */
 }
+
+/* Seção de Oportunidades */
+.opportunities-section {
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #e60124;
+}
+
+.opportunity-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.opportunity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.badge-opportunity {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.price {
+  color: #e60124;
+  font-size: 1.2rem;
+}
+
+.original-price {
+  font-size: 0.9rem;
+  display: block;
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .opportunity-card {
+      margin-bottom: 20px;
+  }
+  
+  .section-title {
+      font-size: 1.5rem;
+  }
+}
