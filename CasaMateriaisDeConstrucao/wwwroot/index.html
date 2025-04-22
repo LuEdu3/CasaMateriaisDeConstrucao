@@ -23,14 +23,18 @@
                 </a>
           
                 <!-- Campo de busca - Visível apenas em desktop -->
-                <form class="d-none d-md-flex flex-grow-1 mx-3" role="search">
-                    <i class="bi bi-search search-icon"></i>
-                    <input class="form-control search-input" type="search" placeholder="Buscar produtos..." aria-label="Buscar">
+                <form class="d-none d-md-flex mx-auto align-items-center" style="width: 50%;" role="search">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0">
+                            <i class="bi bi-search search-icon"></i>
+                        </span>
+                        <input class="form-control border-start-0 search-input" type="search" placeholder="Buscar produtos..." aria-label="Buscar">
+                    </div>
                 </form>
           
                 <!-- Botões Login e Carrinho -->
                 <div class="d-flex align-items-center gap-3 ms-auto">
-                    <a href="/login" class="btn btn-outline-danger d-flex align-items-center">
+                    <a href="login.html" class="btn btn-outline-danger d-flex align-items-center">
                         <i class="bi bi-person me-1"></i>
                         <span class="d-none d-sm-inline">Login</span>
                     </a>
@@ -162,7 +166,7 @@
                         <div class="card opportunity-card h-100 border-0 shadow-sm">
                             <div class="badge-opportunity bg-danger">-25%</div>
                             <img src="imagens/oferta1.jpg" class="card-img-top" alt="Tinta Coral">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                                 <span class="badge bg-warning text-dark mb-2">Mais vendido</span>
                                 <h5 class="card-title">Tinta Coral Premium 18L</h5>
                                 <div class="product-rating mb-2">
@@ -190,7 +194,7 @@
                                         <span class="badge bg-dark">30s</span>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-end mt-3">
+                                <div class="d-flex justify-content-between align-items-end mt-3 mt-auto">
                                     <div>
                                         <span class="price fw-bold">R$ 189,90</span>
                                         <span class="original-price text-muted text-decoration-line-through">R$ 249,90</span>
@@ -206,7 +210,7 @@
                         <div class="card opportunity-card h-100 border-0 shadow-sm">
                             <div class="badge-opportunity bg-success">Promoção</div>
                             <img src="imagens/oferta2.jpg" class="card-img-top" alt="Kit Ferramentas">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Kit Ferramentas 32 peças</h5>
                                 <div class="product-rating mb-2">
                                     <i class="bi bi-star-fill text-warning"></i>
@@ -230,7 +234,7 @@
                                         <span class="badge bg-dark">15s</span>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-end mt-3">
+                                <div class="d-flex justify-content-between align-items-end mt-3 mt-auto">
                                     <div>
                                         <span class="price fw-bold">R$ 149,90</span>
                                         <span class="original-price text-muted text-decoration-line-through">R$ 199,90</span>
@@ -246,7 +250,7 @@
                         <div class="card opportunity-card h-100 border-0 shadow-sm">
                             <div class="badge-opportunity bg-primary">Novidade</div>
                             <img src="imagens/oferta3.jpg" class="card-img-top" alt="Piso Laminado">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">Piso Laminado Oak 8mm</h5>
                                 <div class="product-rating mb-2">
                                     <i class="bi bi-star-fill text-warning"></i>
@@ -265,7 +269,7 @@
                                         <i class="bi bi-shield-check"></i> Garantia
                                     </span>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-end mt-3">
+                                <div class="d-flex justify-content-between align-items-end mt-3 mt-auto">
                                     <div>
                                         <span class="price fw-bold">R$ 89,90</span>
                                         <span class="original-price text-muted text-decoration-line-through">R$ 109,90</span>
@@ -280,7 +284,7 @@
         </section>
 
         <!-- Seção 3: Destaques por Categoria -->
-        <section class="categories-section py-5">
+        <section class="categories-section py-5 bg-light">
             <div class="container">
                 <h2 class="section-title text-center mb-5">Destaques por Categoria</h2>
                 
@@ -399,3 +403,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+``` 

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Depósito Luiz</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- CSS Personalizado baseado no estilo existente -->
+    <style>
+        /* Estilos Gerais - baseados no style.css existente */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f8f9fa; /* Cor de fundo usada nas seções do site */
+        }
+        
+        /* Cabeçalho - mantendo o estilo do site principal */
+        .navbar-brand .brand-name {
+            font-family: 'ITC Motter Corpus', sans-serif;
+            font-size: 1.4rem;
+            color: #e60124; /* Vermelho característico do site */
+        }
+        
+        /* Container principal do formulário */
+        .auth-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra similar à do carrossel */
+        }
+        
+        /* Painel esquerdo (imagem) */
+        .auth-image {
+            background: url('imagens/login-bg.jpg') center/cover no-repeat;
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+        }
+        
+        .auth-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(230, 1, 36, 0.7); /* Vermelho do site com transparência */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            color: white;
+        }
+        
+        /* Painel direito (formulário) */
+        .auth-form {
+            padding: 3rem;
+            background-color: white;
+        }
+        
+        /* Títulos */
+        .auth-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .auth-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #e60124; /* Linha vermelha como no site principal */
+        }
+        
+        /* Formulários */
+        .form-control {
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-control:focus {
+            border-color: #e60124;
+            box-shadow: 0 0 0 0.25rem rgba(230, 1, 36, 0.25); /* Foco com a cor do site */
+        }
+        
+        /* Botões - estilo similar ao site principal */
+        .btn-auth {
+            background-color: #e60124;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            transition: all 0.2s;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .btn-auth:hover {
+            background-color: #a1001a; /* Vermelho mais escuro para hover */
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(230, 1, 36, 0.3); /* Sombra similar aos botões do site */
+        }
+        
+        /* Links */
+        .auth-link {
+            color: #e60124;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .auth-link:hover {
+            color: #a1001a;
+            text-decoration: underline;
+        }
+        
+        /* Abas de login/cadastro */
+        .nav-tabs {
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 2rem;
+        }
+        
+        .nav-tabs .nav-link {
+            color: #333;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: #e60124;
+            background-color: transparent;
+            border-bottom: 3px solid #e60124;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            color: #e60124;
+            border-color: transparent;
+        }
+        
+        /* Divisor "ou" */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #6c757d;
+        }
+        
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .divider::before {
+            margin-right: 1rem;
+        }
+        
+        .divider::after {
+            margin-left: 1rem;
+        }
+        
+        /* Redes sociais */
+        .social-login .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .social-login .btn i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .auth-container {
+                max-width: 700px;
+            }
+            
+            .auth-form {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .auth-image {
+                min-height: 300px;
+            }
+            
+            .auth-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .auth-container {
+                margin: 1rem;
+                border-radius: 8px;
+            }
+            
+            .auth-form {
+                padding: 1.5rem;
+            }
+            
+            .brand-name {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <style>
+        input[type="password"]:not(:focus):not(:placeholder-shown):invalid {
+            background-image: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho consistente com o site principal -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid px-3">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center me-3" href="index.html">
+                <img src="imagens/Logo.svg" alt="Logo Depósito Luiz" width="40" height="40" class="me-2">
+                <span class="brand-name">Depósito Luiz</span>
+            </a>
+            
+            <!-- Botão de login/carrinho visível apenas em mobile -->
+            <div class="d-flex align-items-center gap-3 ms-auto d-lg-none">
+                <a href="/carrinho" class="btn btn-outline-danger d-flex align-items-center position-relative">
+                    <i class="bi bi-cart me-1"></i>
+                    <span class="d-none d-sm-inline">Carrinho</span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="auth-container bg-white">
+            <div class="row g-0">
+                <!-- Painel esquerdo com imagem e mensagem -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="auth-image">
+                        <div class="auth-overlay">
+                            <h2 class="mb-4">Bem-vindo de volta!</h2>
+                            <p>Faça login para acessar sua conta e aproveitar todas as vantagens de ser cliente Depósito Luiz.</p>
+                            <ul class="mt-4 ps-3">
+                                <li class="mb-2">Acompanhe seus pedidos</li>
+                                <li class="mb-2">Salve seus favoritos</li>
+                                <li class="mb-2">Receba ofertas exclusivas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Painel direito com formulários -->
+                <div class="col-lg-6">
+                    <div class="auth-form">
+                        <!-- Abas de login/cadastro -->
+                        <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Cadastre-se</button>
+                            </li>
+                        </ul>
+                        
+                        <!-- Conteúdo das abas -->
+                        <div class="tab-content" id="authTabsContent">
+                            <!-- Tab de Login -->
+                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                <h3 class="auth-title">Acesse sua conta</h3>
+                                
+                                <form id="loginForm">
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" id="loginEmail" placeholder="E-mail" required>
+                                    </div>
+                                    <div class="mb-3 position-relative">
+                                        <input type="password" class="form-control pe-5" id="loginPassword" placeholder="Senha" required>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">Lembrar-me</label>
+                                        </div>
+                                        <a href="#" class="auth-link">Esqueceu sua senha?</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-auth">Entrar</button>
+                                </form>
+                                
+                                <div class="divider">ou</div>
+                                
+                                <div class="social-login">
+                                    <button class="btn btn-outline-secondary w-100 mb-2">
+                                        <i class="bi bi-google"></i> Continuar com Google
+                                    </button>
+                                    <button class="btn btn-outline-primary w-100">
+                                        <i class="bi bi-facebook"></i> Continuar com Facebook
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Tab de Cadastro -->
+                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                <h3 class="auth-title">Crie sua conta</h3>
+                                
+                                <form id="registerForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" class="form-control" id="firstName" placeholder="Nome" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" class="form-control" id="lastName" placeholder="Sobrenome" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" id="registerEmail" placeholder="E-mail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password" class="form-control" id="registerPassword" placeholder="Senha" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha" required>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="acceptTerms" required>
+                                        <label class="form-check-label" for="acceptTerms">
+                                            Eu concordo com os <a href="#" class="auth-link">Termos de Serviço</a> e <a href="#" class="auth-link">Política de Privacidade</a>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-auth">Cadastrar</button>
+                                </form>
+                                
+                                <div class="divider">ou</div>
+                                
+                                <div class="social-login">
+                                    <button class="btn btn-outline-secondary w-100 mb-2">
+                                        <i class="bi bi-google"></i> Continuar com Google
+                                    </button>
+                                    <button class="btn btn-outline-primary w-100">
+                                        <i class="bi bi-facebook"></i> Continuar com Facebook
+                                    </button>
+                                </div>
+                                
+                                <p class="text-center mt-3">Já tem uma conta? <a href="#" class="auth-link" id="switchToLogin">Faça login</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé consistente com o site principal -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0 small">&copy; 2023 Depósito Luiz. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script personalizado -->
+    <script>
+        // Alternar entre login e cadastro
+        document.addEventListener('DOMContentLoaded', function() {
+            // Alternar para login quando clicar no link
+            document.getElementById('switchToLogin').addEventListener('click', function(e) {
+                e.preventDefault();
+                const loginTab = new bootstrap.Tab(document.getElementById('login-tab'));
+                loginTab.show();
+            });
+
+            
+
+            // Validação do formulário de login
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Aqui você adicionaria a lógica de autenticação
+                // alert('Login realizado com sucesso!');
+                // Redirecionar para a página principal após login
+                window.location.href = 'index.html';
+            });
+
+            // Validação do formulário de cadastro
+            document.getElementById('registerForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const password = document.getElementById('registerPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                if (password !== confirmPassword) {
+                    alert('As senhas não coincidem!');
+                    return;
+                }
+
+                if (!document.getElementById('acceptTerms').checked) {
+                    alert('Você deve aceitar os termos e condições!');
+                    return;
+                }
+
+                // Aqui você adicionaria a lógica de cadastro
+                alert('Cadastro realizado com sucesso! Faça login para continuar.');
+
+                // Alternar para a aba de login após cadastro
+                const loginTab = new bootstrap.Tab(document.getElementById('login-tab'));
+                loginTab.show();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -17,16 +17,25 @@ body {
 }
 
 .search-icon {
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 14px; */
+  /* transform: translateY(-50%); */
   color: #999;
   font-size: 1.2rem;
 }
 
+/* Ajuste para alinhar a lupa no input-group do header */
+.input-group-text .search-icon {
+  position: static;
+  transform: none;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #999;
+}
+
 .search-input {
-  padding-left: 2.5rem;
+  /* padding-left: 2.5rem; */ /* Remova ou comente esta linha */
   height: 48px;
   font-size: 1rem;
   border-radius: 10px;
