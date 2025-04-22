@@ -1,16 +1,16 @@
-/* Importar a fonte (caso não tenha hospedada, usar via @font-face ou plugin se necessário) */
-@font-face {
-  font-family: 'ITC Motter Corpus';
-  src: url('fonts/MotterCorpus-Regular.ttf') format('truetype');
+/* Estilos Gerais */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
+/* Cabeçalho */
 .brand-name {
   font-family: 'ITC Motter Corpus', sans-serif;
   font-size: 1.4rem;
   color: #e60124;
 }
 
-/* Campo de busca */
 .search-container {
   position: relative;
   width: 550px;
@@ -33,35 +33,7 @@
   border: 1px solid #ccc;
 }
 
-@media (max-width: 768px) {
-  .navbar .form-control {
-    width: 100%;
-  }
-
-  .navbar form {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    flex-direction: column;
-  }
-
-  .navbar .btn {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Botões com tom da marca */
-.btn-outline-danger {
-  border-color: #e60124;
-  color: #e60124;
-}
-
-.btn-outline-danger:hover {
-  background-color: #e60124;
-  color: #fff;
-}
-
-/* Sub-navbar */
+/* Sub-navegação */
 .sub-navbar {
   background-color: #ffffff;
 }
@@ -70,9 +42,9 @@
   color: #e60124;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.05rem; /* Ligeiramente maior */
+  font-size: 1.05rem;
   transition: color 0.2s ease;
-  padding: 0.25rem 0.5rem; /* Adiciona um pouco de padding ao redor do texto */
+  padding: 0.25rem 0.5rem;
 }
 
 .subnav-link:hover {
@@ -80,14 +52,11 @@
   text-decoration: underline;
 }
 
-/* Adicione isso ao seu arquivo style.css para aumentar o espaçamento entre os links */
 .sub-navbar .container {
-  gap: 3rem !important; /* Aumenta o espaçamento entre os links (aproximadamente 48px) */
+  gap: 3rem !important;
 }
 
-/* Estilos para o dropdown multinível */
-
-/* Estilo básico do dropdown */
+/* Dropdown */
 .dropdown-menu {
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0.1);
@@ -97,7 +66,7 @@
 
 .dropdown-item {
   color: #333;
-  padding: 6px 15px; /* Reduzido de 8px 20px */
+  padding: 6px 15px;
   font-size: 0.95rem;
   transition: all 0.2s ease;
 }
@@ -108,7 +77,6 @@
   color: #e60124;
 }
 
-/* Estilo para o submenu */
 .dropdown-submenu {
   position: relative;
 }
@@ -127,39 +95,18 @@
 .dropdown-submenu .dropdown-menu {
   top: 0;
   left: 100%;
-  margin-top: -1px; /* Reduzido de -8px para -1px */
-  margin-left: 0; /* Reduzido de 1px para 0 */
-  border-radius: 0 4px 4px 4px; /* Suaviza os cantos apenas onde necessário */
-}
-
-.dropdown-submenu .dropdown-menu {
+  margin-top: -1px;
+  margin-left: 0;
+  border-radius: 0 4px 4px 4px;
   display: none;
-  position: absolute;
 }
 
 .dropdown-submenu:hover > .dropdown-menu,
 .dropdown-submenu:focus-within > .dropdown-menu {
   display: block;
-  top: 0; /* Garante que o submenu se alinhe corretamente */
 }
 
-/* Estilização do link principal do dropdown */
-.dropdown-toggle {
-  display: inline-block;
-}
-
-.dropdown-toggle::after {
-  vertical-align: middle;
-}
-
-/* Destaque para o item ativo */
-.dropdown-item.active, 
-.dropdown-item:active {
-  background-color: #e60124;
-  color: white;
-}
-
-/* Estilo para o Carousel */
+/* Carrossel */
 .carousel-section {
   background-color: #f8f9fa;
 }
@@ -172,13 +119,14 @@
 
 .carousel-content {
   position: relative;
-  max-height: 400px; /* Altura média para o carousel */
+  max-height: 400px;
   overflow: hidden;
 }
 
 .carousel-content img {
   object-fit: cover;
   height: 400px;
+  width: 100%;
 }
 
 .carousel-caption {
@@ -203,19 +151,6 @@
   margin-bottom: 15px;
 }
 
-.carousel-caption .btn-danger {
-  background-color: #e60124;
-  border-color: #e60124;
-  padding: 8px 20px;
-  font-weight: 500;
-}
-
-.carousel-caption .btn-danger:hover {
-  background-color: #c4001e;
-  border-color: #c4001e;
-}
-
-/* Personalização dos controles do carousel */
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
@@ -228,9 +163,6 @@
   height: 12px;
   border-radius: 50%;
   margin: 0 6px;
-}
-.carousel-indicators {
-  margin-bottom: 2.5rem; /* ou ajuste como preferir, ex: 3rem */
 }
 
 /* Seção de Oportunidades */
@@ -267,6 +199,14 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+.opportunity-card img {
+  transition: transform 0.3s ease;
+}
+
+.opportunity-card:hover img {
+  transform: scale(1.05);
+}
+
 .badge-opportunity {
   position: absolute;
   top: 10px;
@@ -294,12 +234,164 @@
   object-fit: cover;
 }
 
+.product-rating {
+  font-size: 0.9rem;
+}
+
+.guarantee-badges .badge {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+}
+
+.offer-timer {
+  font-size: 0.8rem;
+}
+
+.btn-sm.btn-danger {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.btn-sm.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(230, 1, 36, 0.3);
+}
+
+/* Seção de Categorias */
+.categories-section {
+  background-color: #fff;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 250px;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.category-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Newsletter */
+.newsletter-section {
+  background-color: #e60124;
+}
+
+.newsletter-section input {
+  height: 50px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #212529;
+}
+
+footer h5, footer h6 {
+  color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #e60124 !important;
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .search-container {
+      width: 100%;
+      margin-top: 10px;
+  }
+  
+  .sub-navbar .container {
+      flex-wrap: wrap;
+      gap: 1rem !important;
+  }
+  
+  .subnav-link {
+      font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .opportunity-card {
-      margin-bottom: 20px;
+  .carousel-content img {
+      height: 300px;
+  }
+  
+  .carousel-caption {
+      padding: 10px;
+      bottom: 20px;
+  }
+  
+  .carousel-caption h3 {
+      font-size: 1.2rem;
+  }
+  
+  .carousel-caption p {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
   }
   
   .section-title {
       font-size: 1.5rem;
+  }
+  
+  .opportunity-card {
+      margin-bottom: 20px;
+  }
+  
+  .category-card {
+      height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-name {
+      font-size: 1.1rem;
+  }
+  
+  .carousel-content img {
+      height: 200px;
+  }
+  
+  .newsletter-section .d-flex {
+      flex-direction: column;
+  }
+  
+  .newsletter-section .btn {
+      margin-top: 10px;
+      width: 100%;
   }
 }

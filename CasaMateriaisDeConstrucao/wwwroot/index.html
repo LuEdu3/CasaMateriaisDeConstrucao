@@ -1,163 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Depósito Luiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depósito Luiz - Materiais de Construção</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- CSS Personalizado -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-<header>
-    
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid px-3">
-          <!-- Logo -->
-          <a class="navbar-brand d-flex align-items-center me-3" href="#">
-            <img src="imagens/Logo.svg" alt="Logo Depósito Luiz" width="40" height="40" class="me-2">
-            <span class="brand-name">Depósito Luiz</span>
-          </a>
-      
-          <!-- Campo de busca -->
-          <form class="d-none d-md-flex flex-grow-1 mx-3" role="search">
-            <i class="bi bi-search search-icon"></i>
-            <input class="form-control search-input" type="search" placeholder="Buscar..." aria-label="Buscar">
-          </form>
-      
-          <!-- Botões Login e Carrinho -->
-          <div class="d-flex align-items-center gap-3 ms-auto">
-            <!-- Login -->
-            <a href="/login" class="btn btn-outline-danger d-flex align-items-center">
-              <i class="bi bi-person me-1"></i>
-              <span class="d-none d-sm-inline">Login</span>
-            </a>
-      
-            <!-- Carrinho -->
-            <a href="/carrinho" class="btn btn-outline-danger d-flex align-items-center position-relative">
-              <i class="bi bi-cart me-1"></i>
-              <span class="d-none d-sm-inline">Carrinho</span>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                3
-              </span>
-            </a>
-          </div>
-        </div>
-      </nav>
-      
-    
-<!-- Adicione isto à sua navbar, substituindo o link "Produtos" existente -->
-<nav class="sub-navbar border-top border-bottom">
-    <div class="container d-flex justify-content-center py-2">
-        <a href="#" class="subnav-link">Home</a>
-        <a href="#" class="subnav-link">Nossa História</a>
-        
-        <!-- Menu dropdown multinível -->
-        <div class="dropdown position-relative">
-            <a href="#" class="subnav-link dropdown-toggle" id="produtosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Produtos
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
-                <!-- Item com submenu -->
-                <li class="dropdown-submenu">
-                    <a class="dropdown-item dropdown-toggle" href="#">Para sua construção</a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                        <li><a class="dropdown-item" href="#">Cimento</a></li>
-                        <li><a class="dropdown-item" href="#">Areia</a></li>
-                        <li><a class="dropdown-item" href="#">Tijolo</a></li>
-                        <li><a class="dropdown-item" href="#">Telhas</a></li>
-                        <li><a class="dropdown-item" href="#">Argamassas</a></li>
-                    </ul>
-                </li>
-                <li><a class="dropdown-item" href="#">Materiais hidráulicos</a></li>
-                
-                <!-- Outro item com submenu -->
-                <li class="dropdown-submenu">
-                    <a class="dropdown-item dropdown-toggle" href="#">Materiais elétricos</a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                        <li><a class="dropdown-item" href="#">Fios</a></li>
-                        <li><a class="dropdown-item" href="#">Cabos</a></li>
-                        <li><a class="dropdown-item" href="#">Interruptores</a></li>
-                        <li><a class="dropdown-item" href="#">Tomadas</a></li>
-                        <li><a class="dropdown-item" href="#">Tubos e eletrodutos</a></li>
-                    </ul>
-                </li>
-                <li><a class="dropdown-item" href="#">Tintas</a></li>
-                <li><a class="dropdown-item" href="#">Vernizes</a></li>
-                <li><a class="dropdown-item" href="#">Esmaltes</a></li>
-                <li><a class="dropdown-item" href="#">Ferramentas</a></li>
-                <li><a class="dropdown-item" href="#">Pisos e revestimentos</a></li>
-                <li><a class="dropdown-item" href="#">Metais</a></li>
-                <li><a class="dropdown-item" href="#">Portas</a></li>
-                <li><a class="dropdown-item" href="#">Janelas</a></li>
-            </ul>
-        </div>
-        
-        <a href="#" class="subnav-link">Carreiras</a>
-        <a href="#" class="subnav-link">Contatos</a>
-    </div>
-</nav>
-</header>
-
-    <!-- Main Section com Carousel -->
-<main>
-    <!-- Banner Carousel -->
-    <section class="carousel-section py-4">
-        <div class="container">
-            <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-                <!-- <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div> -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="carousel-content">
-                            <img src="imagens/promocao1.jpg" class="d-block w-100" alt="Promoção de Ferramentas">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3>Super Oferta em Ferramentas</h3>
-                                <p>Até 30% de desconto em ferramentas selecionadas</p>
-                                <a href="#" class="btn btn-danger">Ver Ofertas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="carousel-content">
-                            <img src="imagens/promocao2.jpg" class="d-block w-100" alt="Promoção de Materiais de Construção">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3>Materiais de Construção</h3>
-                                <p>Preços imperdíveis para sua obra</p>
-                                <a href="#" class="btn btn-danger">Confira</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="carousel-content">
-                            <img src="imagens/promocao3.jpg" class="d-block w-100" alt="Promoção de Acabamentos">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3>Acabamentos Premium</h3>
-                                <p>O melhor para o acabamento da sua casa</p>
-                                <a href="#" class="btn btn-danger">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Cabeçalho/Navegação -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid px-3">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center me-3" href="#">
+                    <img src="imagens/Logo.svg" alt="Logo Depósito Luiz" width="40" height="40" class="me-2">
+                    <span class="brand-name">Depósito Luiz</span>
+                </a>
+          
+                <!-- Campo de busca - Visível apenas em desktop -->
+                <form class="d-none d-md-flex flex-grow-1 mx-3" role="search">
+                    <i class="bi bi-search search-icon"></i>
+                    <input class="form-control search-input" type="search" placeholder="Buscar produtos..." aria-label="Buscar">
+                </form>
+          
+                <!-- Botões Login e Carrinho -->
+                <div class="d-flex align-items-center gap-3 ms-auto">
+                    <a href="/login" class="btn btn-outline-danger d-flex align-items-center">
+                        <i class="bi bi-person me-1"></i>
+                        <span class="d-none d-sm-inline">Login</span>
+                    </a>
+                    <a href="/carrinho" class="btn btn-outline-danger d-flex align-items-center position-relative">
+                        <i class="bi bi-cart me-1"></i>
+                        <span class="d-none d-sm-inline">Carrinho</span>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </a>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
             </div>
-        </div>
-    </section>
+        </nav>
+        
+        <!-- Sub-navegação -->
+        <nav class="sub-navbar border-top border-bottom">
+            <div class="container d-flex justify-content-center py-2">
+                <a href="#" class="subnav-link">Home</a>
+                <a href="#" class="subnav-link">Nossa História</a>
+                
+                <!-- Menu dropdown de produtos -->
+                <div class="dropdown position-relative">
+                    <a href="#" class="subnav-link dropdown-toggle" id="produtosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Produtos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Para sua construção</a>
+                            <ul class="dropdown-menu dropdown-submenu">
+                                <li><a class="dropdown-item" href="#">Cimento</a></li>
+                                <li><a class="dropdown-item" href="#">Areia</a></li>
+                                <li><a class="dropdown-item" href="#">Tijolo</a></li>
+                                <li><a class="dropdown-item" href="#">Telhas</a></li>
+                                <li><a class="dropdown-item" href="#">Argamassas</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Materiais hidráulicos</a></li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Materiais elétricos</a>
+                            <ul class="dropdown-menu dropdown-submenu">
+                                <li><a class="dropdown-item" href="#">Fios</a></li>
+                                <li><a class="dropdown-item" href="#">Cabos</a></li>
+                                <li><a class="dropdown-item" href="#">Interruptores</a></li>
+                                <li><a class="dropdown-item" href="#">Tomadas</a></li>
+                                <li><a class="dropdown-item" href="#">Tubos e eletrodutos</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Tintas</a></li>
+                        <li><a class="dropdown-item" href="#">Vernizes</a></li>
+                        <li><a class="dropdown-item" href="#">Esmaltes</a></li>
+                        <li><a class="dropdown-item" href="#">Ferramentas</a></li>
+                        <li><a class="dropdown-item" href="#">Pisos e revestimentos</a></li>
+                        <li><a class="dropdown-item" href="#">Metais</a></li>
+                        <li><a class="dropdown-item" href="#">Portas</a></li>
+                        <li><a class="dropdown-item" href="#">Janelas</a></li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="subnav-link">Carreiras</a>
+                <a href="#" class="subnav-link">Contatos</a>
+            </div>
+        </nav>
+    </header>
 
-        <!-- Seção de Oportunidades -->
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção 1: Carrossel de Promoções -->
+        <section class="carousel-section py-4">
+            <div class="container">
+                <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="carousel-content">
+                                <img src="imagens/promocao1.jpg" class="d-block w-100" alt="Promoção de Ferramentas">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Super Oferta em Ferramentas</h3>
+                                    <p>Até 30% de desconto em ferramentas selecionadas</p>
+                                    <a href="#" class="btn btn-danger">Ver Ofertas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-content">
+                                <img src="imagens/promocao2.jpg" class="d-block w-100" alt="Promoção de Materiais de Construção">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Materiais de Construção</h3>
+                                    <p>Preços imperdíveis para sua obra</p>
+                                    <a href="#" class="btn btn-danger">Confira</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-content">
+                                <img src="imagens/promocao3.jpg" class="d-block w-100" alt="Promoção de Acabamentos">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Acabamentos Premium</h3>
+                                    <p>O melhor para o acabamento da sua casa</p>
+                                    <a href="#" class="btn btn-danger">Saiba Mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Oportunidades Imperdíveis -->
         <section class="opportunities-section py-5 bg-light">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -174,8 +165,32 @@
                             <div class="card-body">
                                 <span class="badge bg-warning text-dark mb-2">Mais vendido</span>
                                 <h5 class="card-title">Tinta Coral Premium 18L</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <small class="text-muted ms-1">(24)</small>
+                                </div>
                                 <p class="card-text text-muted">Acabamento acetinado para paredes internas</p>
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="guarantee-badges mb-2">
+                                    <span class="badge bg-light text-dark border me-1">
+                                        <i class="bi bi-truck"></i> Entrega rápida
+                                    </span>
+                                    <span class="badge bg-light text-dark border">
+                                        <i class="bi bi-shield-check"></i> Garantia
+                                    </span>
+                                </div>
+                                <div class="offer-timer mt-2">
+                                    <small class="text-muted">Termina em:</small>
+                                    <div class="d-flex gap-1 mt-1">
+                                        <span class="badge bg-dark">12h</span>
+                                        <span class="badge bg-dark">45m</span>
+                                        <span class="badge bg-dark">30s</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
                                     <div>
                                         <span class="price fw-bold">R$ 189,90</span>
                                         <span class="original-price text-muted text-decoration-line-through">R$ 249,90</span>
@@ -193,8 +208,29 @@
                             <img src="imagens/oferta2.jpg" class="card-img-top" alt="Kit Ferramentas">
                             <div class="card-body">
                                 <h5 class="card-title">Kit Ferramentas 32 peças</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star text-warning"></i>
+                                    <small class="text-muted ms-1">(18)</small>
+                                </div>
                                 <p class="card-text text-muted">Kit completo para pequenos reparos</p>
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="guarantee-badges mb-2">
+                                    <span class="badge bg-light text-dark border me-1">
+                                        <i class="bi bi-truck"></i> Entrega rápida
+                                    </span>
+                                </div>
+                                <div class="offer-timer mt-2">
+                                    <small class="text-muted">Termina em:</small>
+                                    <div class="d-flex gap-1 mt-1">
+                                        <span class="badge bg-dark">8h</span>
+                                        <span class="badge bg-dark">22m</span>
+                                        <span class="badge bg-dark">15s</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
                                     <div>
                                         <span class="price fw-bold">R$ 149,90</span>
                                         <span class="original-price text-muted text-decoration-line-through">R$ 199,90</span>
@@ -212,8 +248,24 @@
                             <img src="imagens/oferta3.jpg" class="card-img-top" alt="Piso Laminado">
                             <div class="card-body">
                                 <h5 class="card-title">Piso Laminado Oak 8mm</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <small class="text-muted ms-1">(32)</small>
+                                </div>
                                 <p class="card-text text-muted">Caixa com 2,17m² - Fácil instalação</p>
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="guarantee-badges mb-2">
+                                    <span class="badge bg-light text-dark border me-1">
+                                        <i class="bi bi-truck"></i> Entrega rápida
+                                    </span>
+                                    <span class="badge bg-light text-dark border">
+                                        <i class="bi bi-shield-check"></i> Garantia
+                                    </span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
                                     <div>
                                         <span class="price fw-bold">R$ 89,90</span>
                                         <span class="original-price text-muted text-decoration-line-through">R$ 109,90</span>
@@ -227,10 +279,123 @@
             </div>
         </section>
 
-</main>
-<script src="js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Seção 3: Destaques por Categoria -->
+        <section class="categories-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Destaques por Categoria</h2>
+                
+                <div class="row g-4">
+                    <!-- Categoria 1 -->
+                    <div class="col-md-4">
+                        <div class="category-card">
+                            <img src="imagens/categoria1.jpg" alt="Ferramentas" class="img-fluid rounded">
+                            <div class="category-overlay">
+                                <h3>Ferramentas</h3>
+                                <a href="#" class="btn btn-outline-light">Ver Produtos</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Categoria 2 -->
+                    <div class="col-md-4">
+                        <div class="category-card">
+                            <img src="imagens/categoria2.jpg" alt="Hidráulica" class="img-fluid rounded">
+                            <div class="category-overlay">
+                                <h3>Hidráulica</h3>
+                                <a href="#" class="btn btn-outline-light">Ver Produtos</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Categoria 3 -->
+                    <div class="col-md-4">
+                        <div class="category-card">
+                            <img src="imagens/categoria3.jpg" alt="Tintas" class="img-fluid rounded">
+                            <div class="category-overlay">
+                                <h3>Tintas e Acabamentos</h3>
+                                <a href="#" class="btn btn-outline-light">Ver Produtos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Newsletter -->
+        <section class="newsletter-section py-5 bg-danger text-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h3 class="mb-3">Receba nossas ofertas exclusivas</h3>
+                        <p class="mb-0">Cadastre-se e receba descontos especiais no seu e-mail</p>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="d-flex">
+                            <input type="email" class="form-control me-2" placeholder="Seu melhor e-mail">
+                            <button type="submit" class="btn btn-light text-danger">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4">Depósito Luiz</h5>
+                    <p>Tudo para sua construção com os melhores preços e qualidade.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h6 class="mb-4">Institucional</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50">Sobre nós</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Nossas lojas</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Trabalhe conosco</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Políticas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h6 class="mb-4">Ajuda</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50">Central de atendimento</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Perguntas frequentes</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Trocas e devoluções</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Formas de pagamento</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h6 class="mb-4">Contato</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Av. Construção, 1234 - Centro</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> (11) 1234-5678</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> contato@depositoluiz.com.br</li>
+                        <li class="mb-2"><i class="bi bi-clock me-2"></i> Seg-Sex: 8h às 18h | Sáb: 8h às 13h</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 small">&copy; 2023 Depósito Luiz. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="imagens/payment-methods.png" alt="Formas de pagamento" class="img-fluid" style="max-height: 30px;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Personalizado -->
+    <script src="js/script.js"></script>
 </body>
-
-
 </html>
