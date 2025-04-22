@@ -395,3 +395,19 @@ footer a:hover {
       width: 100%;
   }
 }
+
+/* Garante que o preço e o botão fiquem alinhados na base */
+.price-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+/* Estilo para o botão de carrinho */
+.btn-carrinho {
+  min-width: 90px; /* Largura fixa para todos os botões */
+  padding: 0.35rem 0.75rem;
+  align-self: flex-end; /* Alinha na base */
+  margin-top: auto; /* Empurra para baixo */
+}
